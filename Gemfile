@@ -10,6 +10,9 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem "rspec-rails", "~> 5.1"
+  gem "factory_bot_rails", "~> 6.2"
+  gem "faker", "~> 2.20"
 end
 
 group :development do
@@ -17,6 +20,11 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem "letter_opener", "~> 1.7"
+end
+
+group :test do
+  gem "shoulda-matchers", "~> 4.5"
+  gem "database_cleaner-active_record", "~> 2.0"
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
