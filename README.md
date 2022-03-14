@@ -48,15 +48,23 @@ To run tests, run the following command
 
 ## API Reference
 
-#### Include a Header Authorization
+#### Include Headers
 
-For logout session, edit and delete user, create, edit and delete article requests, include the follow headers:
+Include the headers:
 
 ```bash
-  'uid: userEmail'
-  'client: userClient'
-  'access-token: UserAccessToken'
+  uid: 'userEmail'
+  client: 'userClient'
+  access-token: 'UserAccessToken'
 ```
+For the follow requests:
+- Logout
+- Edit user
+- Edit the user password
+- Delete user
+- Create article
+- Edit article
+- Delete article
 
 #### Endpoints
 
@@ -64,6 +72,8 @@ For logout session, edit and delete user, create, edit and delete article reques
 |---------------------------|----------------------------------------|-------------------------------------------------|
 | ``POST /api/auth``        | Create a new user.                     | email: [String], password: [String], password_confirmation: [String]   |
 | ``PUT /api/auth``         | Edit the user information.             | name: [String], nickname: [String], email: [String]                    |
+| ``PUT /api/auth``         | Edit the user password.                | current_password: [String], password: [String], password_confirmation: [String]|
+| ``POST /api/auth``        | Forgot the user password.             | email: [String]                                                         |
 | ``DELETE /api/auth``      | Remove the user.                       |                                                                        |
 | ``POST /api/auth/sign_in``| Login user's session.                  | email: [String], password: [String]                                    |
 | ``DELETE /api/auth/sign_out`` | Logout user's session.             |                                                                        |
